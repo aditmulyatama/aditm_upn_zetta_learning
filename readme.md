@@ -1,1 +1,1 @@
-hello from git
+Welcome to my repository :)
