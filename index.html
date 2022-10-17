@@ -22,6 +22,12 @@
       color: white;
       text-align: center;
     }
+    .table {
+      border: 1px;
+      border-color: white;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
   <body>
     <div class="container">
@@ -54,32 +60,51 @@
         <li>Watching youtube video</li>
         <li>etc</li>
       </ol>
-      <p>Heres my social media account that you can visit :</p>
 
-      <a href="https://www.instagram.com/adit.mulyatama/?hl=id" target="_blank"
-        ><img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/800px-Instagram_logo_2016.svg.png"
-          alt="instagram"
-          style="width: 100px"
-      /></a>
-
-      <a href="https://github.com/aditmulyatama" target="_blank"
-        ><img
-          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-          alt="instagram"
-          style="
-            width: 100px;
-            padding-left: 30px;
-            -webkit-filter: invert(100%);
-            filter: invert(100%);
-          "
-      /></a>
-      <a href="https://www.facebook.com/adit.mulyatama/" target="_blank"
-        ><img
-          src="https://www.facebook.com/images/fb_icon_325x325.png"
-          alt="instagram"
-          style="width: 100px; padding-left: 30px"
-      /></a>
+      <table class="table" border="1">
+        <thead>
+          <caption>
+            <h3>Heres my social media account that you can visit :</h3>
+          </caption>
+        </thead>
+        <tr>
+          <td>
+            <a
+              href="https://www.instagram.com/adit.mulyatama/?hl=id"
+              target="_blank"
+              ><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/800px-Instagram_logo_2016.svg.png"
+                alt="instagram"
+                style="width: 100px; padding: 30px"
+            /></a>
+            Instagram
+          </td>
+          <td>
+            <a href="https://github.com/aditmulyatama" target="_blank"
+              ><img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+                alt="instagram"
+                style="
+                  width: 100px;
+                  padding: 30px;
+                  -webkit-filter: invert(100%);
+                  filter: invert(100%);
+                "
+            /></a>
+            Github
+          </td>
+          <td>
+            <a href="https://www.facebook.com/adit.mulyatama/" target="_blank"
+              ><img
+                src="https://www.facebook.com/images/fb_icon_325x325.png"
+                alt="instagram"
+                style="width: 100px; padding: 30px"
+            /></a>
+            Facebook
+          </td>
+        </tr>
+        <tr></tr>
+      </table>
     </div>
   </body>
 </html>
