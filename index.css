@@ -32,16 +32,12 @@ body {
     align-items: center;
     clear: both;
   }
-
 .header h1{
     color: white;
   }
-    
-
   .card-container{
     display: flex;
     justify-content: center;
-    clear: both;
   }
   .card-container:first-child{
     margin-top: 0px;
