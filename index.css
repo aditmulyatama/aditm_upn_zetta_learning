@@ -39,8 +39,6 @@ body {
     position: relative;
     clear: left;
   }
-  *.card{
-  }
   .card-container:first-child{
     margin-top: 0px;
   }
