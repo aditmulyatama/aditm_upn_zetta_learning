@@ -47,7 +47,7 @@ body {
   }
   .card-container:first-child{
     margin-top: 0px;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0, 0.7);
   }
   .card-container:last-child{
     margin-bottom: 0px;
@@ -55,7 +55,7 @@ body {
   }
   .card-container:nth-child(2){
     margin: 1rem auto;
-    background-color: greenyellow;
+    background-color: rgb(173, 255, 47, 0.7);
   }
 
   .card{
