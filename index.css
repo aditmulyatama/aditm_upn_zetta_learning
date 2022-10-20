@@ -116,4 +116,5 @@ body {
   }
   .card-container:last-child .card:first-child:hover{
     background-color: yellow;
+    color: darkslateblue;
   }
