@@ -38,15 +38,20 @@ body {
     overflow: hidden;
     position: relative;
     clear: left;
+    border: 1px white solid;
+    background-color: rgb(0, 0, 0,0.7);
   }
   .card-container:first-child{
     margin-top: 0px;
+    background-color: rgb(255, 0, 0);
   }
   .card-container:last-child{
     margin-bottom: 0px;
+    border-color: yellow;
   }
   .card-container:nth-child(2){
-    margin-top: 1rem auto;
+    margin: 1rem auto;
+    background-color: greenyellow;
   }
 
   .card{
@@ -59,7 +64,6 @@ body {
     text-align: center;
     background-color: white;
   }
-
    .card h1{
     display: flex;
     width: auto;
@@ -92,7 +96,7 @@ body {
     font-size: 2rem;
     font-weight: bold;
   }
-
+  
   .button {
     background-color: aquamarine;
     border: none;
@@ -105,4 +109,11 @@ body {
     font-size: 16px;
     margin: 4px 8px;
     cursor: pointer;
+  }
+
+  .card-container:first-child .card:nth-child(2):hover{
+    background-color: gray;
+  }
+  .card-container:last-child .card:first-child:hover{
+    background-color: yellow;
   }
