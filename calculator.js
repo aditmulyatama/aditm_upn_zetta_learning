@@ -1,4 +1,4 @@
-function priceCalculator(book, discount, tax){
+function priceCalculator(book, discount, tax, stock, order){
     let result = 0;
     if(book && book.price){
         const price=book.price;
