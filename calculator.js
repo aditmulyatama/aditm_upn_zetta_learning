@@ -36,7 +36,7 @@ function priceCalculator(book, discount, tax, stock, order) {
     else console.log("Stok masih ada, anda bisa membeli lagi");
     console.groupEnd();
   }
-  return 0;
+  return totalPriceToPay;
 }
 
 priceCalculator({ title: "JS For baby", price: 125000 }, 50, 10, 10, 9);
