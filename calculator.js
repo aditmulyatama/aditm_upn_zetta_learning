@@ -21,4 +21,4 @@ function priceCalculator(book, discount, tax){
     return 0;
 }
 
-priceCalculator({title: "JS For baby", price: 125000, status: true},50,10);
+priceCalculator({title: "JS For baby", price: 125000,},50,10);
