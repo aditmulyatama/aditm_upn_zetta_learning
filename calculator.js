@@ -31,9 +31,13 @@ function priceCalculator(book, discount, tax, stock, order) {
     console.log("Persantase PPN : ", tax, "%");
     console.log("Biaya PPN : ", totalTax);
     console.log("Total pembayaran : ", totalPriceToPay);
-    if (stock - order === 0)
+    console.log("");
+    console.log("Sisa Stok buku : ", stock - order);
+    if (stock - order === 0) {
       console.log("Stok habis, anda tidak bisa membeli lagi");
-    else console.log("Stok masih ada, anda bisa membeli lagi");
+    } else {
+      console.log("Stok masih ada, anda bisa membeli lagi");
+    }
     console.groupEnd();
   }
   return totalPriceToPay;
