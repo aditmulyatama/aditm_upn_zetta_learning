@@ -42,5 +42,8 @@ function priceCalculator(book, discount, tax, stock, order) {
   }
   return totalPriceToPay;
 }
-
-priceCalculator({ title: "JS For baby", price: 125000 }, 50, 10, 10, 9);
+const books = [
+  { title: "JS for baby", price: 125000 },
+  { title: "JS for baby", price: 125000 },
+];
+priceCalculator(books, 50, 10, 10, 9);
