@@ -1,4 +1,4 @@
-function priceCalculator(book, discount, tax, stock, order) {
+function priceCalculator(book, discount, tax, stock, order, credit) {
   let totalPriceToPay = 0;
   const price = book.price;
   const discountAmount = price * (discount / 100);
@@ -31,19 +31,30 @@ function priceCalculator(book, discount, tax, stock, order) {
     console.log("Persantase PPN : ", tax, "%");
     console.log("Biaya PPN : ", totalTax);
     console.log("Total pembayaran : ", totalPriceToPay);
-    console.log("");
     console.log("Sisa Stok buku : ", stock - order);
     if (stock - order === 0) {
       console.log("Stok habis, anda tidak bisa membeli lagi");
     } else {
       console.log("Stok masih ada, anda bisa membeli lagi");
     }
+    console.log("");
+    console.log("Anda melakukan cicilan sebanyak ", credit, " kali");
     console.groupEnd();
   }
+
+  let creditPerMonth = totalPriceToPay / credit;
+  let creditToPay = [];
+  let i = 0;
+
+  while (i < credit) {
+    creditToPay.push({
+      cicilan_ke: i + 1,
+      pembayaran: creditPerMonth,
+    });
+    i++;
+  }
+  console.log(Array.from(creditToPay));
   return totalPriceToPay;
 }
-const books = [
-  { title: "JS for baby", price: 125000 },
-  { title: "JS for baby", price: 125000 },
-];
-priceCalculator(books, 50, 10, 10, 9);
+
+priceCalculator({ title: "JS For baby", price: 125000 }, 50, 10, 10, 9, 12);
