@@ -2,14 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-modul2',
-  templateUrl: './modul2.component.html',
-  styleUrls: ['./modul2.component.scss']
+  template: ` <h1>Halo dari modul 2 !</h1> `,
+  styleUrls: ['./modul2.component.scss'],
 })
 export class Modul2Component implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
