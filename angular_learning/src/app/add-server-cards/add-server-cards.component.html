@@ -1,0 +1,16 @@
+<h1>Adding server cards</h1>
+<!-- <input type="text" name="" class="form-control" (input)="AddServer($event)" /> -->
+<button class="btn btn-primary" (click)="AddServer()">Add Server</button>
+<!-- <p *ngFor="let list of serverList; index as i">
+  This is {{ serverList[i] }} and its status is {{ serverStatus[i] }}
+</p> -->
+<div
+  class="card"
+  style="width: 14rem; height: 15rem"
+  *ngFor="let list of serverList; index as i"
+  [ngStyle]="{ backgroundColor: getColor(i) }"
+  [ngClass]="{ online: serverStatus[i] === 'online' }"
+>
+  <h2 class="card-title">{{ serverList[i] }}</h2>
+  <div class="card-text">{{ serverStatus[i] }}</div>
+</div>

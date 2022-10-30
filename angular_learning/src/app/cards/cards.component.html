@@ -1,2 +1,27 @@
-<h1>cards works!</h1>
-<button class="btn btn-primary" [disabled]="!allowNewCards">Add cards</button>
+<h1>
+  This is {{ "Cards" }} with id {{ cardsId }} and it is {{ getCardsStatus() }}
+</h1>
+<!-- String interpolation -->
+<!-- <input type="text" class="form-control" (input)="onUpdateCardsName($event)" /> -->
+<input type="text" class="form-control" [(ngModel)]="cardName" />
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewCards"
+  (click)="onCreateCards()"
+>
+  Add cards
+</button>
+<p>{{ cardName }}</p>
+
+<p *ngIf="cardCreated || cardName === null">
+  Card was created, card name is {{ cardName }}
+</p>
+
+<app-add-server-cards></app-add-server-cards>
+<!-- Data binding -->
+
+<!-- <p>{{ allowNewCards }}</p> -->
+<!-- String Interpolation -->
+
+<!-- <p [innerText]="allowNewCards"></p>
+Data Binding -->
