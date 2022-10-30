@@ -1,3 +1,10 @@
 .online{
   color: white;
 }
+.flex-container{
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px rgb(209, 19, 19) solid;
+  margin: 2vh 2vh;
+  flex-wrap: wrap;
+}
