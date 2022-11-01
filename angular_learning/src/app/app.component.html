@@ -1,11 +1,10 @@
 <div class="container">
   <div class="row">
     <app-item-input (itemCreated)="onAddItem($event)"></app-item-input>
-  </div>
-</div>
-
-<div class="flex-container">
-  <div class="col-xs-12">
-    <app-item-cards *ngFor="let list of itemList" [items]="list"></app-item-cards>
+    <div class="flex-container">
+      <div class="row">
+        <app-item-cards *ngFor="let list of itemList" [items]="list"></app-item-cards>
+      </div>
+    </div>
   </div>
 </div>
