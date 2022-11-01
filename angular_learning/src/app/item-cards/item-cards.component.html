@@ -1,2 +1,15 @@
-<h3>Input your item name</h3>
-<input type="text" name="item-name" [(ngModel)]="itemName">
+<div class="container">
+  <div class="card" style="width: 14rem; height: 14rem;">
+    <div class="card-body">
+      <div class="card-title">
+        <h3>{{items.itemName}}</h3>
+      </div>
+      <p class="card-text" *ngIf="items.itemStatus === 'Good' "
+        style="font-weight: bold; color: white; background-color: green;">
+        {{items.itemStatus}} </p>
+      <p class="card-text" *ngIf="items.itemStatus === 'Broken' "
+        style="font-style: italic; color: black; background-color: red;">
+        {{items.itemStatus}} </p>
+    </div>
+  </div>
+</div>

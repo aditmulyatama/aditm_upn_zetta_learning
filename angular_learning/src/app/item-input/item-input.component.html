@@ -1,1 +1,8 @@
-<p>item-input works!</p>
+<h3>Input your item name</h3>
+<input type="text" name="item-name" [(ngModel)]="newItemName">
+<h3>Item Status</h3>
+<input type="radio" value="Good" [(ngModel)]="newItemStatus"> Good <br>
+<input type="radio" value="Broken" [(ngModel)]="newItemStatus"> Broken
+<br>
+<!-- <p> {{itemStatus}} </p> -->
+<button (click)="addItem()" class="btn btn-secondary" [disabled]="newItemName === ''">Add Item</button>

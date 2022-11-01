@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular_learning';
-  itemList = [];
+  itemList = [
+    { itemName: 'Item 1', itemStatus: 'Good' },
+    { itemName: 'Item 2', itemStatus: 'Broken' },
+  ];
+  onAddItem(itemData: { item_name: any; item_status: any }) {
+    this.itemList.push({
+      itemName: itemData.item_name,
+      itemStatus: itemData.item_status,
+    });
+  }
 }
