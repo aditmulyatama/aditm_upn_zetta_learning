@@ -1,5 +1,5 @@
 <div class="container">
-  <app-item-input (itemCreated)="onAddItem($event)"></app-item-input>
+  <app-item-input (itCreated)="onAddItem($event)"></app-item-input>
   <div class="flex-container">
     <app-item-cards *ngFor="let list of itemList" [items]="list"></app-item-cards>
   </div>

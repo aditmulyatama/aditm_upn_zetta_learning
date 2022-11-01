@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 export class ItemInputComponent implements OnInit {
   newItemName: string = '';
   newItemStatus: string = '';
-  @Output() itemCreated = new EventEmitter<{
+  @Output('itCreated') itemCreated = new EventEmitter<{
     item_name: string;
     item_status: string;
   }>();
