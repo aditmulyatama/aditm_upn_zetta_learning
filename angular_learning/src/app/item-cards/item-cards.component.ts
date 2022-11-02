@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-item-cards',
@@ -7,7 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ItemCardsComponent implements OnInit {
   @Input() items: { itemName: string; itemStatus: string };
+
+  newItemStatus: string = '';
   constructor() {}
 
   ngOnInit(): void {}
+
+  changeItemStatus() {
+    if (this.items.itemStatus === 'Good') {
+    }
+  }
 }

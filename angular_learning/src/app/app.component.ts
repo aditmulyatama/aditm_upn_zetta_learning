@@ -11,7 +11,7 @@ export class AppComponent {
     { itemName: 'Item 1', itemStatus: 'Good' },
     { itemName: 'Item 2', itemStatus: 'Broken' },
   ];
-  onAddItem(itemData: { item_name: any; item_status: any }) {
+  onAddItem(itemData: { item_name: string; item_status: string }) {
     this.itemList.push({
       itemName: itemData.item_name,
       itemStatus: itemData.item_status,
