@@ -5,4 +5,5 @@
 <input type="radio" value="Broken" [(ngModel)]="newItemStatus"> Broken
 <br>
 <!-- <p> {{itemStatus}} </p> -->
-<button (click)="addItem()" class="btn btn-secondary" [disabled]="newItemName === ''">Add Item</button>
+<button (click)="addItem()" class="btn btn-secondary" [disabled]="newItemName === '' || newItemStatus === '' ">Add
+  Item</button>
