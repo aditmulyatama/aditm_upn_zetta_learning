@@ -1,9 +1,13 @@
 <div class="container">
   <app-item-input (itCreated)="onAddItem($event)"></app-item-input>
+  <hr>
   <div class="flex-container">
-    <app-item-cards *ngFor="let list of itemList" [items]="list"></app-item-cards>
+    <app-item-cards *ngFor="let list of itemList" [items]="list">
+      <hr>
+      <button class="btn btn-primary" style="margin: 2vh 2vh; width: min-content;">Hapus</button>
+      <button class="btn btn-warning" style="margin: 2vh 2vh;width: min-content;">Ganti Status</button>
+    </app-item-cards>
   </div>
-
 </div>
 <!-- <iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://meet.jit.si/MHP"
   style="height: 50rem; width: 75rem; border: 0px;"></iframe> -->
