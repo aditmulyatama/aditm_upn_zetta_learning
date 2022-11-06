@@ -1,0 +1,10 @@
+.flex-container{
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+.row{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

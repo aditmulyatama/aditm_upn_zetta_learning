@@ -1,5 +1,15 @@
 <div class="container">
-  <app-lifecycle-components [name]="'Adit Mulyatama'">
-    <p #paragraph>this is parent paragraph</p>
-  </app-lifecycle-components>
+  <app-item-input (itCreated)="onAddItem($event)"></app-item-input>
+  <hr>
+  <div class="flex-container">
+    <app-item-cards *ngFor="let list of itemList; index as i" [items]="list" [status]="list.itemStatus">
+      <hr>
+      <button class="btn btn-danger" style="margin: 2vh 2vh; width: min-content;"
+        (click)="destroyItem(i)">Hapus</button>
+      <button class="btn btn-primary" style="margin: 2vh 2vh;width: min-content;" (click)="changeStatus(i)">Ganti
+        Status</button>
+    </app-item-cards>
+  </div>
 </div>
+<!-- <iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://meet.jit.si/MHP"
+  style="height: 50rem; width: 75rem; border: 0px;"></iframe> -->
