@@ -32,7 +32,7 @@ export class LifecycleComponentsComponent
     AfterViewChecked,
     OnDestroy
 {
-  @ViewChild('header') header: ElementRef;
+  @ViewChild('header', { static: true }) header: ElementRef;
   @ContentChild('paragraph') paragraph: ElementRef;
   @Input('name') name: string;
 
