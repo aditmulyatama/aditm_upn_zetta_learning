@@ -1,7 +1,7 @@
 Welcome to my repository :)
 This is angular day 4
 
-Report
+# Report
 
 1. Di angular, setiap komponen disalurkan melalui 8 fase berbeda dalam siklus hidupnya. Tepatnya, ini pertama kali diinisialisasi, dan kemudian root dibuat dan kemudian disajikan ke komponen-komponennya. Itu selalu diperiksa setiap kali komponen dimuat selama pengembangan aplikasi dan diperbarui secara bertahap. Ketika komponen tetap tidak digunakan, fase kematian didekati dengan menghancurkan dan mengeluarkannya dari DOM.
    Sangat menarik untuk dicatat bahwa Angular dapat mengawasi semua siklus hidup komponen dan arahannya dan dapat dengan cerdas memahami hasilnya dengan data sebelumnya, membuat integrasi aplikasi menjadi lancar. Secara kolektif, komponen membuat blok bangunan utama dari versi, dan Direktif menyalurkan versi ini dengan build.
