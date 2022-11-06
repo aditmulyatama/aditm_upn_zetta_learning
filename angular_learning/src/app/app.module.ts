@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
+import { LifecycleComponentsComponent } from './lifecycle-components/lifecycle-components.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LifecycleComponentsComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

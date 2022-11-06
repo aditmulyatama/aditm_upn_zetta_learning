@@ -10,3 +10,22 @@ This is angular day 4
 - Saat menginisialisasi komponen siklus hidup Angular apa pun, ia membuat dan disajikan ke komponen akarnya yang dirancang untuk diproduksi kepada ahli waris.
 - Fase berikutnya melibatkan komponen yang dimuat selama pengembangan aplikasi, dan teknik pengikatan data diubah dan diperbarui secara bertahap.
 - Bagian selanjutnya melibatkan komponen yang tidak digunakan yang tidak digunakan dan didekati ke fase kematian dan dipindahkan dari DOM.
+
+# KUIS
+
+1. ada dua kasus:
+   a. Initialisasi directive atau komponen setelah angular pertamakali menampilkan properti data
+   b. Mengatur directive atau properti input komponen
+2. dipanggil saat:
+   a. dipanggil setelah ngOnChanges (jika terdapat onChanges)
+   b. dipanggil walaupun tidak ada onChanges
+3. ngAfterViewInit dipanggil pada saat setelah ngAfterContentChecked
+4. ngOnChanges dipanggil pada saat sebelum ngOnInit (jika terdapat perubahan pada input)
+5. Urutan hooks lifecycle :
+   1. ngOnChanges
+   2. ngOnInit
+   3. ngDoCheck
+   4. ngAFterContentInit
+   5. ngAfterContentChecked
+   6. ngAfterViewInit
+   7. ngAfterViewChecked
