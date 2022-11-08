@@ -18,10 +18,12 @@ export class AppComponent {
     });
   }
   changeStatus(index: number) {
-    if (this.itemList[index].itemStatus === 'Good') {
+    if (this.itemList[index].itemStatus === 'Perfect') {
+      this.itemList[index].itemStatus = 'Good';
+    } else if (this.itemList[index].itemStatus === 'Good') {
       this.itemList[index].itemStatus = 'Broken';
     } else {
-      this.itemList[index].itemStatus = 'Good';
+      this.itemList[index].itemStatus = 'Perfect';
     }
   }
   destroyItem(index: number) {
