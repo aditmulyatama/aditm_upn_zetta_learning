@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoggingService {
-
-  constructor() { }
+  logStatusChange(status: string) {
+    console.log('The status is changed, new status : ' + status);
+  }
+  constructor() {}
 }
