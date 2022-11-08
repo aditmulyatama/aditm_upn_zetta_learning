@@ -8,6 +8,8 @@ import { ItemInputComponent } from './item-input/item-input.component';
 import { ItemCardsComponent } from './item-cards/item-cards.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoggingService } from './logging.service';
+import { ItemsService } from './items.service';
 @NgModule({
   declarations: [AppComponent, ItemInputComponent, ItemCardsComponent],
   imports: [
@@ -19,7 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [LoggingService, ItemsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

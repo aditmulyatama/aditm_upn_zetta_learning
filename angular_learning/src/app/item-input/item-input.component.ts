@@ -1,18 +1,12 @@
-import {
-  Component,
-  OnInit,
-  EventEmitter,
-  Output,
-  ViewChild,
-  ElementRef,
-} from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { LoggingService } from '../logging.service';
+import { ItemsService } from '../items.service';
 
 @Component({
   selector: 'app-item-input',
   templateUrl: './item-input.component.html',
   styleUrls: ['./item-input.component.scss'],
+  providers: [],
 })
 export class ItemInputComponent implements OnInit {
   newItemName: string = '';
@@ -21,26 +15,18 @@ export class ItemInputComponent implements OnInit {
   public defaultStatus: string = 'Perfect';
   public defaultName: string = 'Item x';
 
-  @Output('itCreated') itemCreated = new EventEmitter<{
-    item_name: string;
-    item_status: string;
-  }>();
-
   @ViewChild('itemNameInput') itemNameInput: ElementRef;
 
-  constructor() {}
+  constructor(
+    private loggingService: LoggingService,
+    private itemService: ItemsService
+  ) {}
 
   ngOnInit(): void {}
 
   addItem(name: string, status: string) {
+    this.itemService.onAddItems(name, status);
     console.log(this.itemNameInput);
-    // this.itemNameList.push(this.itemName);
-    // this.itemStatusList.push(this.itemStatus);
-    this.itemCreated.emit({
-      // item_name: this.newItemName,
-      item_status: status,
-      // item_name: name.value,
-      item_name: name,
-    });
+    this.loggingService.logStatusChange(status);
   }
 }

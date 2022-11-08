@@ -1,13 +1,56 @@
 <div class="container">
-  <app-item-input (itCreated)="onAddItem($event)"></app-item-input>
-  <hr>
+  <app-item-input></app-item-input>
+  <hr />
+  <div>
+    <h2>Change All Items Status</h2>
+    <button
+      (click)="changeAllStatus('Perfect')"
+      class="btn"
+      style="
+        margin: 2vh 2vh;
+        width: min-content;
+        background-color: green;
+        color: white;
+      "
+    >
+      Perfect
+    </button>
+    <button
+      (click)="changeAllStatus('Good')"
+      class="btn"
+      style="margin: 2vh 2vh; width: min-content; background-color: greenyellow"
+    >
+      Good
+    </button>
+    <button
+      (click)="changeAllStatus('Broken')"
+      class="btn"
+      style="margin: 2vh 2vh; width: min-content; background-color: red"
+    >
+      Broken
+    </button>
+  </div>
   <div class="flex-container">
-    <app-item-cards *ngFor="let list of itemList; index as i" [items]="list" [status]="list.itemStatus">
-      <hr>
-      <button class="btn btn-danger" style="margin: 2vh 2vh; width: min-content;"
-        (click)="destroyItem(i)">Hapus</button>
-      <button class="btn btn-primary" style="margin: 2vh 2vh;width: min-content;" (click)="changeStatus(i)">Ganti
-        Status</button>
+    <app-item-cards
+      *ngFor="let list of itemList; index as i"
+      [items]="list"
+      [status]="list.itemStatus"
+    >
+      <hr />
+      <button
+        class="btn btn-danger"
+        style="margin: 2vh 2vh; width: min-content"
+        (click)="destroyItem(i)"
+      >
+        Hapus
+      </button>
+      <button
+        class="btn btn-primary"
+        style="margin: 2vh 2vh; width: min-content"
+        (click)="updateStatus(i)"
+      >
+        Ganti Status
+      </button>
     </app-item-cards>
   </div>
 </div>
