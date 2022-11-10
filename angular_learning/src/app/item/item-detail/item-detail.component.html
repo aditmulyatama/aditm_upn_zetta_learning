@@ -1,1 +1,7 @@
-<p>item-detail works!</p>
+<div class="container">
+  <h1>{{ itemInfo.nama }}</h1>
+  <img [src]="itemInfo.gambar" alt="" /> <br /><br /><br /><br />
+  <p>Harga : {{ harga }}</p>
+  <p>Kondisi : {{ itemInfo.kondisi }}</p>
+  <a [href]="itemInfo.link_pembelian" class="btn btn-danger">Link Pembelian</a>
+</div>

@@ -1,0 +1,23 @@
+img{
+  width: auto;
+  height: 25rem;
+}
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.panel{
+  margin: 25px 10px 0px 10px;
+  justify-content: center;
+  text-align: center;
+  height: max-content;
+  width: min-content;
+}
+
+.centered{
+  text-align: center;
+}
+p{
+  text-align: center;
+}

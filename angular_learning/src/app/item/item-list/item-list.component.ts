@@ -15,6 +15,18 @@ export class ItemListComponent implements OnInit {
     kondisi: string;
     link_pembelian: string;
   }[] = this.itemService.itemList;
+  getColor(kondisi: string) {
+    if (kondisi === 'Sempurna') {
+      return 'green';
+    } else if (kondisi === 'Baik') {
+      return 'greenyellow';
+    } else {
+      return 'red';
+    }
+  }
+  displayHarga(index: number) {
+    return this.itemService.formatter.format(this.items[index].harga);
+  }
 
   ngOnInit(): void {}
 }
