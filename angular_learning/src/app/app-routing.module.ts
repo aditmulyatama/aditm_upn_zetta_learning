@@ -14,7 +14,7 @@ const routes: Routes = [
     component: UserComponent,
     children: [
       { path: '', redirectTo: 'user-list', pathMatch: 'full' },
-      { path: 'user-edit', component: UserEditComponent },
+      { path: ':id/user-edit', component: UserInputComponent },
       { path: 'user-input', component: UserInputComponent },
       { path: 'user-list', component: UserListComponent },
     ],

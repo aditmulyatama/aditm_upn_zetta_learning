@@ -1,10 +1,23 @@
 import { Injectable } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  data: any[] = [];
+  data: {
+    Id: FormControl;
+    Nama: FormControl;
+    Umur: FormControl;
+    Gender: FormControl;
+    Email: FormControl;
+    Domisili: FormControl;
+    StatusPernikahan: FormControl;
+    Alamat: FormControl;
+    KodePos: FormControl;
+    Kota: FormControl;
+    Negara: FormControl;
+  }[] = [];
   constructor() {}
   detail: boolean[] = [];
   addData(dataInput: any, detail: boolean) {

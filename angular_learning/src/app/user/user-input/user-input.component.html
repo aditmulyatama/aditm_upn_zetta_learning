@@ -19,6 +19,7 @@
               id=""
               formControlName="Id"
               placeholder="id number"
+              [value]="dataId"
             />
             <mat-hint>Id</mat-hint>
           </mat-form-field>
@@ -164,7 +165,6 @@
         </mat-form-field>
       </div>
     </div>
-    <input type="hidden" formControlName="Detail" name="" id="" />
   </form>
   <br /><br />
   <button mat-raised-button class="btn btn-primary" (click)="tambah()">

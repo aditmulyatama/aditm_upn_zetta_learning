@@ -1,13 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormsModule,
+  Validators,
+} from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-user-input',
   templateUrl: './user-input.component.html',
   styleUrls: ['./user-input.component.scss'],
 })
 export class UserInputComponent implements OnInit {
-  data: any[] = [];
+  data: {
+    Id: FormControl<number>;
+    Nama: FormControl;
+    Umur: FormControl;
+    Gender: FormControl;
+    Email: FormControl;
+    Domisili: FormControl;
+    StatusPernikahan: FormControl;
+    Alamat: FormControl;
+    KodePos: FormControl;
+    Kota: FormControl;
+    Negara: FormControl;
+  }[] = [];
+  dataId: any;
+  dataNama: any;
+  dataUmur: any;
+  dataGender: any;
+  dataEmail: any;
+  dataStatusPernikahan: any;
+  dataAlamat: any;
+  dataKodePos: any;
+  dataKota: any;
+  dataNegara: any;
   userForm = this.formBuilder.group({
     Id: ['', Validators.required],
     Nama: ['', Validators.required],
@@ -23,7 +52,8 @@ export class UserInputComponent implements OnInit {
   });
   constructor(
     private formBuilder: FormBuilder,
-    private dataService: DataService
+    private dataService: DataService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
