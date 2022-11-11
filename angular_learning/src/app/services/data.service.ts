@@ -6,9 +6,10 @@ import { Injectable } from '@angular/core';
 export class DataService {
   data: any[] = [];
   constructor() {}
-
-  addData(dataInput: any) {
+  detail: boolean[] = [];
+  addData(dataInput: any, detail: boolean) {
     this.data.push(dataInput);
+    this.detail.push(detail);
   }
   changeData(param: any) {
     for (let index = 0; index < this.data.length; index++) {

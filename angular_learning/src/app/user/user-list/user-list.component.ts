@@ -7,9 +7,13 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class UserListComponent implements OnInit {
   constructor(private dataService: DataService) {}
-
+  detail: boolean[] = [];
   userlist: any[] = [];
   ngOnInit(): void {
     this.userlist = this.dataService.data;
+    this.detail = this.dataService.detail;
+  }
+  onDetail(index: number) {
+    this.detail[index] = !this.detail[index];
   }
 }

@@ -1,26 +1,32 @@
 <div class="flex-container">
-  <div class="card" style="width: 100rem">
+  <div
+    class="card"
+    style="width: 150rem; margin: 2rem auto"
+    *ngFor="let user of userlist; let i = index"
+  >
     <mat-card>
       <div class="card-header">
         <h2 class="card-title">Nama</h2>
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <button class="btn btn-warning">Detail</button>
+          <div class="col">
+            <button class="btn btn-warning" (click)="onDetail(i)">
+              Detail
+            </button>
           </div>
-          <div class="col-xs-12 col-sm-4">
-            <mat-card-content>
-              <h4 class="card-text">Nama :</h4>
-              <h4 class="card-text">Nama :</h4>
-              <h4 class="card-text">Nama :</h4>
-              <h4 class="card-text">Nama :</h4>
-              <h4 class="card-text">Nama :</h4>
-              <h4 class="card-text">Nama :</h4>
-              <h4 class="card-text">Nama :</h4>
-              <h4 class="card-text">Nama :</h4>
-              <h4 class="card-text">Nama :</h4>
-              <h4 class="card-text">Nama :</h4>
+          <div class="col">
+            <mat-card-content *ngIf="detail[i]">
+              <h4>Nama : {{ user.Nama }}</h4>
+              <h4>Umur : {{ user.Umur }}</h4>
+              <h4>Gender : {{ user.Gender }}</h4>
+              <h4>Email : {{ user.Email }}</h4>
+              <h4>Domisili : {{ user.Domisili }}</h4>
+              <h4>Status Pernikahan : {{ user.StatusPernikahan }}</h4>
+              <h4>Alamat : {{ user.Alamat }}</h4>
+              <h4>Kode Pos : {{ user.KodePos }}</h4>
+              <h4>Kota : {{ user.Kota }}</h4>
+              <h4>Negara : {{ user.Negara }}</h4>
             </mat-card-content>
           </div>
         </div>

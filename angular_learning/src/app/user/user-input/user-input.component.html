@@ -1,32 +1,173 @@
-<div style="border: 2px solid rgb(219, 219, 219); padding: 16px">
+<div
+  style="
+    border: 2px solid rgb(219, 219, 219);
+    padding: 3rem;
+    width: max-content;
+  "
+>
   <h2>Tambah Data User</h2>
   <form [formGroup]="userForm">
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Id</mat-label>
-        <input
-          mat-input
-          type="number"
-          name=""
-          id=""
-          formControlName="Id"
-          placeholder="id number"
-        />
-        <mat-hint>Id</mat-hint>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Nama</mat-label>
-        <input
-          mat-input
-          type="text"
-          name=""
-          id=""
-          formControlName="Nama"
-          placeholder="Nama"
-        />
-        <mat-hint>Id</mat-hint>
-      </mat-form-field>
-    </p>
+    <div class="row">
+      <div class="col">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Id</mat-label>
+            <input
+              matInput
+              type="number"
+              name=""
+              id=""
+              formControlName="Id"
+              placeholder="id number"
+            />
+            <mat-hint>Id</mat-hint>
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="col">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Nama</mat-label>
+            <input
+              matInput
+              type="text"
+              name=""
+              id=""
+              formControlName="Nama"
+              placeholder="Nama"
+            />
+            <mat-hint>Nama</mat-hint>
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Umur</mat-label>
+            <input
+              matInput
+              type="number"
+              name=""
+              id=""
+              formControlName="Umur"
+              placeholder="Umur"
+            />
+            <mat-hint>Umur</mat-hint>
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="col">
+        <mat-label>Gender </mat-label><br />
+        <mat-radio-group formControlName="Gender" appearance="outline">
+          <mat-radio-button value="male">Male </mat-radio-button>
+          <mat-radio-button value="female">Female </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="email"
+              name=""
+              id=""
+              formControlName="Email"
+              placeholder="Nama"
+            />
+            <mat-hint>Email</mat-hint>
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Status Pernikahan</mat-label>
+            <mat-select formControlName="StatusPernikahan">
+              <mat-option value="married">Married</mat-option>
+              <mat-option value="single">Single</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="col">
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Domisili</mat-label>
+            <mat-select formControlName="Domisili">
+              <mat-option value="DKI Jakarta">DKI Jakarta</mat-option>
+              <mat-option value="DI Yogyakarta">DI Yogyakarta</mat-option>
+              <mat-option value="Surabaya">Surabaya</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="legacy">
+          <input
+            type="text"
+            name=""
+            id=""
+            formControlName="Alamat"
+            placeholder="Alamat"
+            matInput
+          />
+          <mat-hint>Alamat</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="legacy">
+          <input
+            type="text"
+            name=""
+            id=""
+            formControlName="KodePos"
+            placeholder="Kode pos"
+            matInput
+          />
+          <mat-hint>Kode Pos</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="legacy">
+          <input
+            type="text"
+            name=""
+            id=""
+            formControlName="Kota"
+            placeholder="Kota"
+            matInput
+          />
+          <mat-hint>Kota</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="legacy">
+          <input
+            type="text"
+            name=""
+            id=""
+            formControlName="Negara"
+            placeholder="Negara"
+            matInput
+          />
+          <mat-hint>Negara</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <input type="hidden" formControlName="Detail" name="" id="" />
   </form>
-  <button mat-button>Ok</button>
+  <br /><br />
+  <button mat-raised-button class="btn btn-primary" (click)="tambah()">
+    Tambah
+  </button>
 </div>

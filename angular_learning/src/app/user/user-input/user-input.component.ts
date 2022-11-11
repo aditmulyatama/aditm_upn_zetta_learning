@@ -12,7 +12,7 @@ export class UserInputComponent implements OnInit {
     Id: ['', Validators.required],
     Nama: ['', Validators.required],
     Umur: ['', Validators.required],
-    Gender: ['', Validators.required],
+    Gender: [''],
     Email: ['', Validators.required],
     Domisili: ['', Validators.required],
     StatusPernikahan: ['', Validators.required],
@@ -31,6 +31,6 @@ export class UserInputComponent implements OnInit {
   }
 
   tambah() {
-    this.dataService.addData(this.userForm.value);
+    this.dataService.addData(this.userForm.value, false);
   }
 }
