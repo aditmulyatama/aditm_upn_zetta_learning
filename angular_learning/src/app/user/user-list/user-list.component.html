@@ -24,10 +24,13 @@
               <h4>Email : {{ user.Email }}</h4>
               <h4>Domisili : {{ user.Domisili }}</h4>
               <h4>Status Pernikahan : {{ user.StatusPernikahan }}</h4>
-              <h4>Alamat : {{ user.Alamat }}</h4>
-              <h4>Kode Pos : {{ user.KodePos }}</h4>
-              <h4>Kota : {{ user.Kota }}</h4>
-              <h4>Negara : {{ user.Negara }}</h4>
+              <div *ngFor="let alamat of user.dataAlamat; index as i">
+                <h2>Alamat ke {{ i + 1 }}</h2>
+                <h4>Alamat : {{ alamat.Alamat }}</h4>
+                <h4>Kode Pos : {{ alamat.KodePos }}</h4>
+                <h4>Kota : {{ alamat.Kota }}</h4>
+                <h4>Negara : {{ alamat.Negara }}</h4>
+              </div>
             </mat-card-content>
           </div>
         </div>
