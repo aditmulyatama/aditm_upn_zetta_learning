@@ -20,33 +20,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-edit.component.scss'],
 })
 export class UserEditComponent implements OnInit, OnChanges, DoCheck {
-  data: {
-    Id: any;
-    Nama: any;
-    Umur: FormControl;
-    Gender: FormControl;
-    Email: FormControl;
-    Domisili: FormControl;
-    StatusPernikahan: FormControl;
-    Alamat: FormControl;
-    KodePos: FormControl;
-    Kota: FormControl;
-    Negara: FormControl;
-  }[] = this.dataService.data;
-  hasil: any[] = [];
   dataId: any = this.activatedRoute.snapshot.paramMap.get('id');
+
+  data: any = this.dataService.data.find((x) => x.Id == this.dataId);
+  hasil: any[] = [];
   userForm = this.formBuilder.group({
     Id: [this.dataId, Validators.required],
-    Nama: ['', Validators.required],
-    Umur: ['', Validators.required],
-    Gender: [''],
-    Email: ['', Validators.required, Validators.email],
-    Domisili: ['', Validators.required],
-    StatusPernikahan: ['', Validators.required],
-    Alamat: ['', Validators.required],
-    KodePos: ['', Validators.required, Validators.minLength(5)],
-    Kota: ['', Validators.required],
-    Negara: ['', Validators.required],
+    Nama: [this.data.Nama, Validators.required],
+    Umur: [this.data.Umur, Validators.required],
+    Gender: [this.data.Gender],
+    Email: [this.data.Email, Validators.required],
+    Domisili: [this.data.Domisili, Validators.required],
+    StatusPernikahan: [this.data.StatusPernikahan, Validators.required],
+    Alamat: [this.data.Alamat, Validators.required],
+    KodePos: [this.data.KodePos, Validators.required],
+    Kota: [this.data.Kota, Validators.required],
+    Negara: [this.data.Negara, Validators.required],
   });
   constructor(
     private formBuilder: FormBuilder,
@@ -55,8 +44,9 @@ export class UserEditComponent implements OnInit, OnChanges, DoCheck {
   ) {}
 
   ngOnInit(): void {
-    this.data = this.dataService.data;
     this.dataId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.data = this.dataService.data.find((x) => x.Id == this.dataId);
+
     console.log(this.dataId);
   }
   ngOnChanges(changes: SimpleChanges): void {
