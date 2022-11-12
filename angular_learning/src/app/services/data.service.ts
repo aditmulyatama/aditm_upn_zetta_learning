@@ -6,7 +6,7 @@ import { FormControl } from '@angular/forms';
 })
 export class DataService {
   data: {
-    Id: FormControl;
+    Id: FormControl<number>;
     Nama: FormControl;
     Umur: FormControl;
     Gender: FormControl;
@@ -24,6 +24,8 @@ export class DataService {
     this.data.push(dataInput);
     this.detail.push(detail);
   }
+
+  getData(index: number) {}
   changeData(param: any) {
     for (let index = 0; index < this.data.length; index++) {
       if (this.data[index].Id == param.Id) {
