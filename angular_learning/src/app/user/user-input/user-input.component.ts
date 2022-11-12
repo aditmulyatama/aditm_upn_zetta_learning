@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  FormArray,
   FormBuilder,
   FormControl,
   FormsModule,
   Validators,
+  FormGroup,
 } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { ActivatedRoute } from '@angular/router';
@@ -27,16 +29,7 @@ export class UserInputComponent implements OnInit {
     Kota: FormControl;
     Negara: FormControl;
   }[] = [];
-  dataId: any;
-  dataNama: any;
-  dataUmur: any;
-  dataGender: any;
-  dataEmail: any;
-  dataStatusPernikahan: any;
-  dataAlamat: any;
-  dataKodePos: any;
-  dataKota: any;
-  dataNegara: any;
+
   userForm = this.formBuilder.group({
     Id: ['', Validators.required],
     Nama: ['', Validators.required],
@@ -45,7 +38,7 @@ export class UserInputComponent implements OnInit {
     Email: ['', Validators.required],
     Domisili: ['', Validators.required],
     StatusPernikahan: ['', Validators.required],
-    Alamat: ['', Validators.required],
+    dataAlamat: new FormArray([]),
     KodePos: ['', Validators.required],
     Kota: ['', Validators.required],
     Negara: ['', Validators.required],
@@ -55,6 +48,7 @@ export class UserInputComponent implements OnInit {
     private dataService: DataService,
     private activatedRoute: ActivatedRoute
   ) {}
+  tambahAlamat: any = (<FormArray>this.userForm.get('dataAlamat')).controls;
 
   ngOnInit(): void {
     this.data = this.dataService.data;
@@ -62,5 +56,15 @@ export class UserInputComponent implements OnInit {
 
   tambah() {
     this.dataService.addData(this.userForm.value, false);
+  }
+  tambahAlamatBaru() {
+    (<FormArray>this.userForm.get('dataAlamat')).push(
+      new FormGroup({
+        Alamat: new FormControl(null),
+        KodePos: new FormControl(null),
+        Kota: new FormControl(null),
+        Negara: new FormControl(null),
+      })
+    );
   }
 }

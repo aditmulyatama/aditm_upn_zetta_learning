@@ -19,7 +19,6 @@
               id=""
               formControlName="Id"
               placeholder="id number"
-              [value]="dataId"
             />
             <mat-hint>Id</mat-hint>
           </mat-form-field>
@@ -111,62 +110,78 @@
         </p>
       </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="legacy">
-          <input
-            type="text"
-            name=""
-            id=""
-            formControlName="Alamat"
-            placeholder="Alamat"
-            matInput
-          />
-          <mat-hint>Alamat</mat-hint>
-        </mat-form-field>
-      </div>
-      <div class="col">
-        <mat-form-field appearance="legacy">
-          <input
-            type="text"
-            name=""
-            id=""
-            formControlName="KodePos"
-            placeholder="Kode pos"
-            matInput
-          />
-          <mat-hint>Kode Pos</mat-hint>
-        </mat-form-field>
-      </div>
-      <div class="col">
-        <mat-form-field appearance="legacy">
-          <input
-            type="text"
-            name=""
-            id=""
-            formControlName="Kota"
-            placeholder="Kota"
-            matInput
-          />
-          <mat-hint>Kota</mat-hint>
-        </mat-form-field>
-      </div>
-      <div class="col">
-        <mat-form-field appearance="legacy">
-          <input
-            type="text"
-            name=""
-            id=""
-            formControlName="Negara"
-            placeholder="Negara"
-            matInput
-          />
-          <mat-hint>Negara</mat-hint>
-        </mat-form-field>
-      </div>
+    <h2>Tambah data alamat</h2>
+    <div formArrayName="dataAlamat">
+      <ng-container
+        *ngFor="let alamat of tambahAlamat; let i = index"
+        [formGroupName]="i"
+      >
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="legacy">
+              <input
+                type="text"
+                name=""
+                id=""
+                formControlName="Alamat"
+                placeholder="Alamat"
+                matInput
+              />
+              <mat-hint>Alamat</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="legacy">
+              <input
+                type="text"
+                name=""
+                id=""
+                formControlName="KodePos"
+                placeholder="Kode pos"
+                matInput
+              />
+              <mat-hint>Kode Pos</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="legacy">
+              <input
+                type="text"
+                name=""
+                id=""
+                formControlName="Kota"
+                placeholder="Kota"
+                matInput
+              />
+              <mat-hint>Kota</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="legacy">
+              <input
+                type="text"
+                name=""
+                id=""
+                formControlName="Negara"
+                placeholder="Negara"
+                matInput
+              />
+              <mat-hint>Negara</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </form>
   <br /><br />
+  <button
+    mat-raised-button
+    class="btn btn-danger"
+    (click)="tambahAlamatBaru()"
+    style="margin-right: 2rem"
+  >
+    Tambah Alamat Baru
+  </button>
   <button
     mat-raised-button
     class="btn btn-primary"
