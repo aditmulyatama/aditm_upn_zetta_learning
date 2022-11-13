@@ -32,10 +32,15 @@ export class UserInputComponent implements OnInit {
 
   userForm = this.formBuilder.group({
     Id: ['', Validators.required],
-    Nama: ['', Validators.required],
-    Umur: ['', Validators.required],
-    Gender: [''],
-    Email: ['', Validators.required],
+    Nama: ['', Validators.required, Validators.pattern('^[A-Z, a-z]*$')],
+    Umur: [
+      '',
+      Validators.required,
+      Validators.pattern('^[0-9]*$'),
+      Validators.min(11),
+    ],
+    Gender: ['', Validators.required],
+    Email: ['', Validators.required, Validators.email],
     Domisili: ['', Validators.required],
     StatusPernikahan: ['', Validators.required],
     dataAlamat: new FormArray([]),
@@ -60,10 +65,10 @@ export class UserInputComponent implements OnInit {
   tambahAlamatBaru() {
     (<FormArray>this.userForm.get('dataAlamat')).push(
       new FormGroup({
-        Alamat: new FormControl(null),
-        KodePos: new FormControl(null),
-        Kota: new FormControl(null),
-        Negara: new FormControl(null),
+        Alamat: new FormControl(null, Validators.required),
+        KodePos: new FormControl(null, Validators.required),
+        Kota: new FormControl(null, Validators.required),
+        Negara: new FormControl(null, Validators.required),
       })
     );
   }
