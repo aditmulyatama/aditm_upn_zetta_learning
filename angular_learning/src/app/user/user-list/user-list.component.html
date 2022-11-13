@@ -1,8 +1,13 @@
 <div class="flex-container">
+  <mat-form-field appearance="outline">
+    <mat-label style="margin-right: 2rem">Cari nama : </mat-label>
+    <input matInput placeholder="" [(ngModel)]="usersearch" />
+  </mat-form-field>
+
   <div
     class="card"
     style="width: 200rem; margin: 2rem auto"
-    *ngFor="let user of userlist; let i = index"
+    *ngFor="let user of userlist | filter: usersearch; let i = index"
   >
     <mat-card>
       <div class="card-header">

@@ -74,10 +74,11 @@ export class UserInputComponent implements OnInit {
       });
     } else {
       Swal.fire('New data has been added!');
+      this.dataService.addData(this.userForm.value, false);
+
       setTimeout(() => {
-        this.dataService.addData(this.userForm.value, false);
         this.router.navigate(['/users/user-list']);
-      }, 2000);
+      }, 500);
     }
   }
   tambahAlamatBaru() {

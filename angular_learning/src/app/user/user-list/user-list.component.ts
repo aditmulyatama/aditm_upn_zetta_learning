@@ -10,6 +10,7 @@ export class UserListComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router) {}
   detail: boolean[] = [];
   userlist: any[] = [];
+  usersearch: any = '';
   ngOnInit(): void {
     this.userlist = this.dataService.data;
     this.detail = this.dataService.detail;
