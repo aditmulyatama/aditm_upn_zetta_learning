@@ -10,7 +10,7 @@ export class FilterPipe implements PipeTransform {
     } else {
       return data.filter((parse) => {
         return (
-          parse.Name.toLowerCase()
+          parse.Nama.toLowerCase()
             .split(' ')
             .join('')
             .indexOf(filterkey.toLowerCase()) >= 0
