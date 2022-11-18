@@ -24,7 +24,7 @@ import { AddDataComponent } from './add/add-data/add-data.component';
     EditDataComponent,
     ListDataComponent,
     SearchPipe,
-    AddDataComponent
+    AddDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +36,9 @@ import { AddDataComponent } from './add/add-data/add-data.component';
     MatInputModule,
     MatCardModule,
     BrowserAnimationsModule,
-    MatButtonModule
-
+    MatButtonModule,
   ],
   providers: [DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
